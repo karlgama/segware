@@ -26,7 +26,7 @@ import com.example.Segware.repositories.PostRepository;
 
 @RestController
 @RequestMapping("/posts")
-public class PostsController {
+public class PostController {
 
 	@Autowired
 	private PostRepository postRepository;
@@ -36,7 +36,6 @@ public class PostsController {
 			@PageableDefault(sort = "id", direction = Direction.DESC, page = 0, size = 10) Pageable paginacao) {
 		List<Post> posts = postRepository.findAll();
 		return posts;
-
 	}
 
 	@GetMapping("/{id}")

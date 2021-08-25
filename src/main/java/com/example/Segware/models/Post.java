@@ -20,7 +20,7 @@ public class Post {
 	private Integer upvotes;
 	@NotNull
 	@Length(min = 5)
-	private String titulo;
+	private String title;
 	@NotNull
 	@Length(min = 5, max = 1200)
 	private String message;
@@ -29,8 +29,8 @@ public class Post {
 		this.upvotes = 0;
 	}
 
-	public Post(String message, String titulo) {
-		this.titulo = titulo;
+	public Post(String message, String title) {
+		this.title = title;
 		this.message = message;
 	}
 
@@ -51,11 +51,11 @@ public class Post {
 	}
 
 	public String getTitulo() {
-		return titulo;
+		return title;
 	}
 
 	public void setTitulo(String titulo) {
-		this.titulo = titulo;
+		this.title = titulo;
 	}
 
 	public Long getId() {

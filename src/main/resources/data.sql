@@ -1,0 +1,1 @@
+INSERT INTO POST(message,title,upvotes) VALUES('Mensagem de teste', 'titulo de teste', 5);
