@@ -50,12 +50,12 @@ public class Post {
 		this.message = message;
 	}
 
-	public String getTitulo() {
+	public String gettitle() {
 		return title;
 	}
 
-	public void setTitulo(String titulo) {
-		this.title = titulo;
+	public void settitle(String title) {
+		this.title = title;
 	}
 
 	public Long getId() {

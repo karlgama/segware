@@ -14,11 +14,11 @@ public class EditedPostDto {
 	@Length(min = 10)
 	private String message;
 
-	public String getTitulo() {
+	public String gettitle() {
 		return title;
 	}
 
-	public void setTitulo(String title) {
+	public void settitle(String title) {
 		this.title = title;
 	}
 
@@ -33,7 +33,7 @@ public class EditedPostDto {
 	public Post update(Long id, PostRepository postsRepository) {
 		Post post= postsRepository.getById(id);
 		post.setMessage(this.message);
-		post.setTitulo(this.title);
+		post.settitle(this.title);
 		return post;
 	}
 

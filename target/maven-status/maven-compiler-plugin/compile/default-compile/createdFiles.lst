@@ -1,0 +1,5 @@
+com/example/Segware/DTO/EditedPostDto.class
+com/example/Segware/models/Post.class
+com/example/Segware/repositories/PostRepository.class
+com/example/Segware/SegwareApplication.class
+com/example/Segware/controllers/PostController.class

@@ -31,21 +31,21 @@ class PostsControllerTest extends BaseApi {
 	@Test
 	void shouldReturnAListOfPosts_whenRequestAllPosts() throws Exception {
 		URI uri = new URI("/posts");
-		String json = "[{\"id\":1,\"upvotes\":5,\"message\":\"Mensagem de teste\",\"titulo\":\"titulo de teste\"}]";
+		String json = "[{\"id\":1,\"upvotes\":5,\"message\":\"Mensagem de teste\",\"title\":\"titulo de teste\"},{\"id\":2,\"upvotes\":2,\"title\":\"Segundo titulo\",\"message\":\"Segunda mensagem\"}]";
 		mockMvc.perform(MockMvcRequestBuilders.get(uri)).andExpect(MockMvcResultMatchers.content().json(json));
 	};
 
 	@Test
 	void shouldReturnAPost_whenRequestPostDetails() throws Exception {
 		URI uri = new URI("/posts/1");
-		String json = "{\"id\":1,\"upvotes\":5,\"message\":\"Mensagem de teste\",\"titulo\":\"titulo de teste\"}";
+		String json = "{\"id\":1,\"upvotes\":5,\"message\":\"Mensagem de teste\",\"title\":\"titulo de teste\"}";
 		mockMvc.perform(MockMvcRequestBuilders.get(uri)).andExpect(MockMvcResultMatchers.content().json(json));
 	};
 
 	@Test
 	void shouldReturn201_whenSendARequestOfTypePost() throws Exception {
 		URI uri = new URI("/posts");
-		String json = "{\"message\":\"Mensagem de teste\",\"titulo\":\"titulo de teste\"}";
+		String json = "{\"message\":\"Mensagem de teste\",\"title\":\"titulo de teste\"}";
 		mockMvc.perform(MockMvcRequestBuilders.post(uri).contentType(MediaType.APPLICATION_JSON).content(json))
 				.andExpect(MockMvcResultMatchers.status().is(201));
 	};
@@ -53,7 +53,7 @@ class PostsControllerTest extends BaseApi {
 	@Test
 	void shouldCreateANewPost_whenSendARequestOfTypePost() throws Exception {
 		URI uri = new URI("/posts");
-		String json = "{\"message\":\"Mensagem de teste\",\"titulo\":\"titulo de teste\"}";
+		String json = "{\"message\":\"Mensagem de teste\",\"title\":\"title de teste\"}";
 		mockMvc.perform(MockMvcRequestBuilders.post(uri).contentType(MediaType.APPLICATION_JSON).content(json))
 				.andExpect(MockMvcResultMatchers.content().json(json));
 	};
@@ -61,7 +61,7 @@ class PostsControllerTest extends BaseApi {
 	@Test
 	void shouldEditAPost_whenSendARequestOfTypePatch() throws Exception {
 		URI uri = new URI("/posts/1");
-		String json = "{\"message\":\"Editada\",\"titulo\":\"titulo Editado\"}";
+		String json = "{\"message\":\"Editada\",\"title\":\"title Editado\"}";
 		mockMvc.perform(MockMvcRequestBuilders.patch(uri).contentType(MediaType.APPLICATION_JSON).content(json))
 				.andExpect(MockMvcResultMatchers.content().json(json));
 	};
